@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.book-card {
+    width: 290px;
+    height: 400px;
+    background-color: rgb(246, 243, 243);
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(54, 51, 51, 0.3 );
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+.book-card:hover {
+    transform: scale(1.03);
+}
+.book-image {
+    width: 100%;
+}
+.book-details {
+    padding: 15px;
+}
+.book-title {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+} 
+.book-author {
+    font-size: 1rem;
+    color: #434141;
+}
+.book-date {
+    color: #434141;
+    font-size: 1rem;
+}
+.author-date {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.booklist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 1rem;
+    justify-content:center;
+    align-items: center;
+}
+
+/* App.jsx */
+.heading {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search {
+display: flex;
+justify-content: center;
+font-size: 18px;
+gap: 10px;
+padding: 5px;
+}
+
+.search-input {
+    width: 40%;
+    border-radius: 5px;
+    border: 0.5px solid #555;
+    padding: 5px;
+}
+.search-button {
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: 0.5px solid #555;
+    transition: all 0.3s;
+}
+.search-button:hover {
+    background-color: #434141;
+}
