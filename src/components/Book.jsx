@@ -1,6 +1,7 @@
 import "./style.css";
 function Book(props) {
   // console.log(props)
+
   return (
     <div className="book-card">
       <img

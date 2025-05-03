@@ -1,83 +1,181 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .book-card {
-    width: 290px;
-    height: 400px;
-    background-color: rgb(246, 243, 243);
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(54, 51, 51, 0.3 );
-    transition: transform 0.3s;
-    overflow: hidden;
+  width: 290px;
+  height: 400px;
+  background-color: rgb(246, 243, 243);
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(54, 51, 51, 0.3);
+  transition: transform 0.3s;
+  overflow: hidden;
 }
 .book-card:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 .book-image {
-    width: 100%;
+  width: 100%;
 }
 .book-details {
-    padding: 15px;
+  padding: 15px;
 }
 .book-title {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    text-align: center;
-} 
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
 .book-author {
-    font-size: 1rem;
-    color: #434141;
+  font-size: 1rem;
+  color: #434141;
 }
 .book-date {
-    color: #434141;
-    font-size: 1rem;
+  color: #434141;
+  font-size: 1rem;
 }
 .author-date {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .booklist {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 1rem;
-    justify-content:center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 /* App.jsx */
 .heading {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .search {
-display: flex;
-justify-content: center;
-font-size: 18px;
-gap: 10px;
-padding: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  gap: 10px;
+  padding: 5px;
 }
 
 .search-input {
-    width: 40%;
-    border-radius: 5px;
-    border: 0.5px solid #555;
-    padding: 5px;
+  width: 40%;
+  border-radius: 5px;
+  border: 0.5px solid #555;
+  padding: 5px;
 }
 .search-button {
-    padding: 0px 20px;
-    border-radius: 5px;
-    border: 0.5px solid #555;
-    transition: all 0.3s;
+  padding: 0px 20px;
+  border-radius: 5px;
+  border: 0.5px solid #555;
+  transition: all 0.3s;
 }
 .search-button:hover {
-    background-color: #434141;
+  background-color: #434141;
+  color: white;
+}
+
+/* Header.jsx css  */
+.header {
+  border: 1px solid black;
+  padding: 2px;
+  background-color: #434141;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.header-link {
+  text-decoration: none;
+  color: white;
+}
+.header-link li {
+  list-style: none;
+  margin: 0 10px;
+  font-size: large;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.header-link li:hover {
+  color: blue;
+}
+.user p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Book.jsx css  */
+
+.book-details {
+  color: black;
+}
+.user-book {
+  margin-top: 5px;
+  color: brown;
+}
+
+/* BookDetails.jsx css  */
+
+.book-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 7rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.book-view img {
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+}
+.book-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  width: 70%;
+  height: 25rem;
+  padding: 5rem;
+}
+.book-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.book-details-author-date{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Demo.jsx css  */
+.demo-container {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  margin: 20px;
+  text-align: center;
+}
+.demo-container button{
+  margin: 20px;
 }

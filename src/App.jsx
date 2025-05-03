@@ -1,41 +1,16 @@
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
 import { useState } from "react";
-import BookList from "./components/BookList";
-import { Books } from "./utils/mockData";
+import userContext from "./utils/useContext";
 
 function App() {
-  const [searchText, setSearchText] = useState("");
-  const [filteredBooks, setfilteredBooks] = useState(Books);
-
-  function handleSearch() {
-    console.log(searchText);
-    const filterBooks = Books.filter((book) =>
-      book.title.toLowerCase().includes(searchText.toLowerCase())
-    );
-    console.log("filtered Books: ", filterBooks);
-    setfilteredBooks(filterBooks);
-  }
+  const [userName, setUserName] = useState("shashikant sahu");
 
   return (
-    <>
-      <h1 className="heading">Book Management Application</h1>
-      <div className="search">
-        <h3>Search Books</h3>
-        <input
-          type="text"
-          name=""
-          id=""
-          className="search-input"
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button className="search-button" onClick={handleSearch}>
-          Search
-        </button>
-      </div>
-      <BookList booksData={filteredBooks} />
-      {/* <BookList booksData={Books} /> */}
-    </>
+    <userContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <Header />
+      <Outlet />
+    </userContext.Provider>
   );
 }
 
