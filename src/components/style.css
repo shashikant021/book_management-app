@@ -52,7 +52,7 @@
   align-items: center;
 }
 
-/* App.jsx */
+/* Search.jsx */
 .heading {
   text-align: center;
   margin: 20px 0;
@@ -116,6 +116,12 @@
 .header-link li:hover {
   color: blue;
 }
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 .user p {
   display: flex;
   justify-content: center;
@@ -161,11 +167,27 @@
   font-size: 2rem;
   margin-bottom: 20px;
 }
-.book-details-author-date{
+.book-details-author-date {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
+}
+.btn-button {
+  margin: 2rem 0;
+  padding: 5px;
+}
+
+.cart-button {
+  margin: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 0.5px solid #555;
+  transition: all 0.3s;
+}
+.cart-button:hover {
+  background-color: #434141;
+  color: white;
 }
 
 /* Demo.jsx css  */
@@ -176,6 +198,17 @@
   margin: 20px;
   text-align: center;
 }
-.demo-container button{
+.demo-container button {
   margin: 20px;
+}
+
+/* Memo.jsx css  */
+
+.memo-container {
+  border: 1px solid black;
+  width: 400px;
+  height: 400px;
+}
+.memo-container input {
+  margin: 10px;
 }

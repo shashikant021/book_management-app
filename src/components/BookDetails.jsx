@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { Books } from "../utils/mockData";
 import { useContext } from "react";
 import userContext from "../utils/useContext";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
 
 function BookDetails() {
   //useParams is a hook that returns an object of key/value pairs of URL parameters
@@ -9,6 +11,15 @@ function BookDetails() {
   const bookDetails = Books.filter((book) => book.id == params.id);
   // console.log(params);
   const data = useContext(userContext);
+  const dispatch = useDispatch();
+
+  function handleAddBook(item) {
+    dispatch(addItem(item));
+  }
+
+  function handleRemoveItem() {
+    dispatch(removeItem());
+  }
 
   return (
     <>
@@ -53,6 +64,18 @@ function BookDetails() {
                   <sapn>Pages: {book.pages}</sapn>
                 </div>
                 <p className="book-details-desc">{book.description}</p>
+                <div className="btn-button">
+                  {" "}
+                  <button
+                    onClick={() => handleAddBook(book)}
+                    className="cart-button"
+                  >
+                    Add to Cart
+                  </button>
+                  <button onClick={handleRemoveItem} className="cart-button">
+                    Remove Item
+                  </button>
+                </div>
                 <p className="user-book">User : ----{data.loggedInUser}----</p>
               </div>
             </div>

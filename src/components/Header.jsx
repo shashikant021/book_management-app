@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import userContext from "../utils/useContext";
 import { useContext } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { FaCartPlus } from "react-icons/fa";
 
 function Header() {
   const data = useContext(userContext);
   // console.log("Header", data);
+
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log("cartItems", cartItems);
   return (
     <div className="header">
       <ul className="header-list">
@@ -23,7 +28,13 @@ function Header() {
         </Link>
       </ul>
       <div className="user">
-        <p><FaUserCircle /> {data.loggedInUser} </p>
+        <span>
+          <sup>{cartItems.length}</sup>
+          <FaCartPlus />
+        </span>
+        <p>
+          <FaUserCircle /> {data.loggedInUser}{" "}
+        </p>
       </div>
     </div>
   );
